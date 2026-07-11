@@ -3,6 +3,7 @@ import { easing } from '../motionVariants'
 
 export function ProjectPreview({ project }) {
   const isWeather = project.previewStyle === 'weather-dashboard'
+  const isFinance = project.previewStyle === 'finance-dashboard'
   const Icon = project.icon
 
   return (
@@ -42,6 +43,34 @@ export function ProjectPreview({ project }) {
             <div className="mt-5 flex h-12 items-end gap-1.5 border-b border-[var(--border-faint)] pb-1">
               {[22, 38, 30, 55, 42, 68, 60, 72, 49].map((height, index) => (
                 <motion.span key={index} initial={{ height: 0 }} whileInView={{ height: `${height}%` }} viewport={{ once: true }} transition={{ duration: 0.52, delay: index * 0.035, ease: easing }} className="w-full rounded-t bg-[var(--accent)]" style={{ opacity: index % 2 === 0 ? 0.7 : 0.35 }} />
+              ))}
+            </div>
+          </div>
+        ) : isFinance ? (
+          <div className="pt-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[rgba(var(--accent-rgb),0.85)]">This month</p>
+                <p className="mt-1 text-2xl font-semibold tracking-tight text-[var(--text)]">₹42,180</p>
+              </div>
+              <motion.div whileHover={{ rotate: 6, scale: 1.06 }} className="grid h-12 w-12 place-items-center rounded-2xl border border-[rgba(var(--accent-rgb),0.2)] bg-[rgba(var(--accent-rgb),0.07)]">
+                <Icon size={21} className="text-[var(--accent)]" />
+              </motion.div>
+            </div>
+            <div className="mt-5 grid grid-cols-3 gap-2">
+              {['Income', 'Expenses', 'Saved'].map((item, index) => (
+                <motion.div key={item} whileHover={{ y: -2 }} className="rounded-lg border border-[var(--border-faint)] bg-[var(--fill-faint)] p-2.5">
+                  <p className="text-[9px] text-[var(--text-faint)]">{item}</p>
+                  <p className="mt-1 text-xs font-medium text-[var(--text-soft)]">{index === 0 ? '₹68,000' : index === 1 ? '₹42,180' : '38%'}</p>
+                </motion.div>
+              ))}
+            </div>
+            <div className="mt-5 space-y-2.5 rounded-xl border border-[var(--border-faint)] bg-[var(--fill-faint)] p-3.5">
+              {[{ label: 'Food & Dining', pct: 72 }, { label: 'Transport', pct: 48 }, { label: 'Shopping', pct: 30 }].map((row) => (
+                <div key={row.label}>
+                  <div className="flex items-center justify-between text-[9px] text-[var(--text-faint)]"><span>{row.label}</span><span>{row.pct}%</span></div>
+                  <div className="mt-1 h-1.5 w-full rounded-full bg-[var(--divider)]"><motion.div initial={{ width: 0 }} whileInView={{ width: `${row.pct}%` }} viewport={{ once: true }} transition={{ duration: 0.6, ease: easing }} className="h-full rounded-full bg-[var(--accent)]" /></div>
+                </div>
               ))}
             </div>
           </div>

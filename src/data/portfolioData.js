@@ -1,4 +1,4 @@
-import { Bot, Braces, GraduationCap, Layers3, Sparkles, TerminalSquare, Zap } from 'lucide-react'
+import { Bot, Braces, GraduationCap, Layers3, Sparkles, TerminalSquare, Wallet, Zap } from 'lucide-react'
 import { GithubIcon, LeetcodeIcon, LinkedinIcon } from '../components/icons'
 
 export const navItems = [
@@ -69,6 +69,46 @@ export const projects = [
     links: {
       github: 'https://github.com/naren699/Weather-App',
       live: 'https://weather-app-xi-rosy-44.vercel.app/',
+    },
+  },
+  {
+    number: '03', title: 'ExpenseFlow – Smart Expense Tracker', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
+    role: 'Designed & Developed', status: 'Completed',
+    pitch: 'A modern personal finance platform that helps users track expenses, manage budgets, visualize spending trends, and achieve financial goals through an intuitive dashboard.',
+    overview: 'ExpenseFlow is a full-stack personal finance application built to simplify money management through a clean, responsive interface. Users can securely manage income and expenses, organize transactions by category, monitor budgets, and gain insights through interactive analytics. The application focuses on usability, real-time data updates, and scalable architecture.',
+    problem: 'Managing personal finances should be simple and accessible. ExpenseFlow transforms raw financial data into meaningful insights, enabling users to understand spending habits, stay within budgets, and make informed financial decisions through clear visualizations and a streamlined user experience.',
+    features: [
+      'Secure user authentication using Firebase Authentication',
+      'Real-time expense and income management with Firestore',
+      'Interactive analytics dashboard with charts and spending insights',
+      'Monthly budget planning and goal tracking',
+      'Category-based transaction organization',
+      'Responsive UI optimized for desktop, tablet, and mobile',
+      'Dark and Light theme support',
+      'Fast search, filtering, and sorting of transactions',
+    ],
+    stack: [
+      { label: 'React', icon: '⚛' },
+      { label: 'JavaScript', icon: '🟨' },
+      { label: 'Firebase', icon: '🔥' },
+      { label: 'Firestore', icon: '🗄' },
+      { label: 'Firebase Auth', icon: '🔐' },
+      { label: 'Tailwind CSS', icon: '🎨' },
+      { label: 'Recharts', icon: '📊' },
+      { label: 'Vite', icon: '⚡' },
+    ],
+    stats: [
+      { label: 'Transactions', value: 'Unlimited' },
+      { label: 'Categories', value: '10+' },
+      { label: 'Analytics', value: 'Real-Time' },
+      { label: 'Responsive', value: 'Yes' },
+      { label: 'Authentication', value: 'Firebase' },
+      { label: 'Deployment', value: 'Vercel' },
+    ],
+    buildNotes: 'Built to turn everyday financial data into clear, actionable insight through a fast, secure, and fully responsive experience.',
+    links: {
+      github: 'https://github.com/naren699/exxpense-tracker',
+      live: 'https://expenseone-eight.vercel.app/',
     },
   },
 ]
