@@ -21,32 +21,7 @@ export const skillGroups = [
 
 export const projects = [
   {
-    number: '01', title: 'AI Notes Summarizer', eyebrow: 'AI-powered productivity application', type: 'AI Productivity Tool', date: 'June 2026', icon: Sparkles, accent: 'purple', previewStyle: 'ai-dashboard',
-    role: 'Designed & Developed', status: 'Completed',
-    pitch: 'Turns long study material into clear, structured notes—so understanding takes less time.',
-    overview: 'A learning-focused web application for simplifying dense text into concise, useful notes. The product pairs an approachable React experience with AI summarization and a cloud-backed workflow.',
-    problem: 'Long source material can slow down revision. The app gives students a focused way to extract the important ideas without losing the flow of studying.',
-    features: ['AI-powered text summarization through Gemini API', 'Clear, structured notes designed for fast review', 'Clean React interface built around a simple input-to-insight flow', 'Firebase and Firestore foundation for a cloud-backed application'],
-    stack: [
-      { label: 'React', icon: '⚛' },
-      { label: 'Gemini API', icon: '🤖' },
-      { label: 'Firebase', icon: '🔥' },
-      { label: 'Firestore', icon: '🗄' },
-      { label: 'HTML', icon: '📄' },
-      { label: 'CSS', icon: '🎨' },
-      { label: 'Vercel', icon: '▲' },
-    ],
-    stats: [
-      { label: 'Components', value: '10+' },
-      { label: 'APIs Used', value: '1' },
-      { label: 'Database', value: 'Firestore' },
-      { label: 'Deployment', value: 'Vercel' },
-    ],
-    buildNotes: 'Designed as a modern, deployable web workflow that keeps the experience focused on learning—not setup.',
-    links: {},
-  },
-  {
-    number: '02', title: 'Weather Prediction Application', eyebrow: 'Internship project · Straive', type: 'Frontend / Internship Project', date: 'Jun — Jul 2025', icon: Zap, accent: 'blue', previewStyle: 'weather-dashboard',
+    number: '01', title: 'Weather Prediction Application', eyebrow: 'Internship project · Straive', type: 'Frontend / Internship Project', date: 'Jun — Jul 2025', icon: Zap, accent: 'blue', previewStyle: 'weather-dashboard',
     role: 'Designed & Developed', status: 'Completed',
     pitch: 'A responsive weather experience that makes live location data easy to understand at a glance.',
     overview: 'Built during my Full Stack Development internship at Straive, this React application translates live weather API responses into a clean, responsive interface for selected locations.',
@@ -72,7 +47,7 @@ export const projects = [
     },
   },
   {
-    number: '03', title: 'ExpenseFlow – Smart Expense Tracker', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
+    number: '02', title: 'ExpenseFlow – Smart Expense Tracker', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
     role: 'Designed & Developed', status: 'Completed',
     pitch: 'A modern personal finance platform that helps users track expenses, manage budgets, visualize spending trends, and achieve financial goals through an intuitive dashboard.',
     overview: 'ExpenseFlow is a full-stack personal finance application built to simplify money management through a clean, responsive interface. Users can securely manage income and expenses, organize transactions by category, monitor budgets, and gain insights through interactive analytics. The application focuses on usability, real-time data updates, and scalable architecture.',
@@ -110,6 +85,31 @@ export const projects = [
       github: 'https://github.com/naren699/exxpense-tracker',
       live: 'https://expenseone-eight.vercel.app/',
     },
+  },
+  {
+    number: '03', title: 'AI Notes Summarizer', eyebrow: 'AI-powered productivity application', type: 'AI Productivity Tool', date: 'June 2026', icon: Sparkles, accent: 'purple', previewStyle: 'ai-dashboard',
+    role: 'Designed & Developed', status: 'Completed',
+    pitch: 'Turns long study material into clear, structured notes—so understanding takes less time.',
+    overview: 'A learning-focused web application for simplifying dense text into concise, useful notes. The product pairs an approachable React experience with AI summarization and a cloud-backed workflow.',
+    problem: 'Long source material can slow down revision. The app gives students a focused way to extract the important ideas without losing the flow of studying.',
+    features: ['AI-powered text summarization through Gemini API', 'Clear, structured notes designed for fast review', 'Clean React interface built around a simple input-to-insight flow', 'Firebase and Firestore foundation for a cloud-backed application'],
+    stack: [
+      { label: 'React', icon: '⚛' },
+      { label: 'Gemini API', icon: '🤖' },
+      { label: 'Firebase', icon: '🔥' },
+      { label: 'Firestore', icon: '🗄' },
+      { label: 'HTML', icon: '📄' },
+      { label: 'CSS', icon: '🎨' },
+      { label: 'Vercel', icon: '▲' },
+    ],
+    stats: [
+      { label: 'Components', value: '10+' },
+      { label: 'APIs Used', value: '1' },
+      { label: 'Database', value: 'Firestore' },
+      { label: 'Deployment', value: 'Vercel' },
+    ],
+    buildNotes: 'Designed as a modern, deployable web workflow that keeps the experience focused on learning—not setup.',
+    links: {},
   },
 ]
 
