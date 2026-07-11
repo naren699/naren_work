@@ -1,0 +1,12 @@
+import { motion } from 'framer-motion'
+import { Reveal, Stagger } from '../components/Motion'
+import { cardHover, chipVariants, easing } from '../components/motionVariants'
+import { SectionHeading } from '../components/shared/SectionHeading'
+import { TechPill } from '../components/shared/TechPill'
+import { skillGroups } from '../data/portfolioData'
+
+export default function SkillsSection() {
+  return (
+    <section id="skills" className="relative scroll-mt-20 border-y border-[var(--border-faint)] bg-[var(--surface-sunken)] py-24 sm:py-32"><div className="mx-auto max-w-7xl px-5 sm:px-7 lg:px-8"><Reveal className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><SectionHeading eyebrow="Capabilities" title="A stack for shipping clear, connected web products." copy="The tools I reach for span interface craft, application logic, cloud-backed data, and the workflows that keep a build moving." /><p className="max-w-xs border-l border-iris-400/50 pl-4 text-sm leading-6 text-[var(--text-muted)]">I focus on using the right tools for the product, not adding technology for its own sake.</p></Reveal><Stagger className="mt-14 grid gap-4 md:grid-cols-2" stagger={0.1}>{skillGroups.map(({ title, icon: Icon, detail, skills }, index) => <motion.article variants={chipVariants} whileHover={cardHover} key={title} className="group relative overflow-hidden rounded-[1.4rem] border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors duration-300 hover:border-iris-400/30 hover:shadow-xl hover:shadow-iris-950/20 sm:p-7"><motion.div initial={{ x: '-110%' }} whileHover={{ x: '110%' }} transition={{ duration: 0.7, ease: easing }} className="pointer-events-none absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-iris-300/[0.05] to-transparent" /><div className="relative flex items-start justify-between gap-5"><motion.div whileHover={{ rotate: 6, scale: 1.08 }} className="grid h-10 w-10 place-items-center rounded-xl border border-iris-400/15 bg-iris-400/[0.06] text-[var(--accent-text)]"><Icon size={19} /></motion.div><span className="font-mono text-xs text-[var(--text-faint)]">0{index + 1}</span></div><h3 className="relative mt-6 text-xl font-medium tracking-[-0.035em] text-[var(--text)]">{title}</h3><p className="relative mt-2 max-w-md text-sm leading-6 text-[var(--text-muted)]">{detail}</p><Stagger className="relative mt-6 flex flex-wrap gap-2" delay={0.1} stagger={0.04}>{skills.map((skill) => <TechPill key={skill}>{skill}</TechPill>)}</Stagger></motion.article>)}</Stagger></div></section>
+  )
+}

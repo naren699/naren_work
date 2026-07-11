@@ -1,0 +1,34 @@
+NARENDHIRAN P
+Full Stack Developer | AI & DS Student
+Chennai, India
+pnarendhiran6@gmail.com | +91 8122846046
+
+PROFILE
+Full Stack Developer and B.Tech AI & DS student building modern, user-focused web applications. Interested in clean UI, practical functionality, API integration, and AI-powered workflows.
+
+EDUCATION
+Saveetha Engineering College, Chennai
+B.Tech in Artificial Intelligence and Data Science | 2024 - 2028
+CGPA: 8.05
+
+EXPERIENCE
+Full Stack Development Intern, Straive, Puducherry | Jun 2025 - Jul 2025
+- Developed a Weather Prediction Application using HTML, CSS, JavaScript, and React.
+- Integrated weather APIs for real-time temperature, humidity, wind speed, and conditions.
+- Created reusable React components, responsive layouts, and interactive UI elements.
+- Strengthened frontend development, API integration, state management, debugging, and deployment workflow skills.
+
+PROJECTS
+AI Notes Summarizer | Jun 2026
+React, Firebase, Gemini API, Firestore, HTML, CSS, Vercel
+AI-powered notes application that turns long study materials into concise, structured notes for a focused learning workflow.
+
+Weather Prediction Application | Jun 2025 - Jul 2025
+React, JavaScript, HTML, CSS, Weather API
+Responsive web application delivering live weather information for selected locations.
+
+SKILLS
+Languages: C, Java, Python, JavaScript
+Frontend: React, HTML, CSS, Responsive Design, State Management
+Cloud & Data: Firebase, Firestore, Gemini API, API Integration
+Tools: Git, GitHub, GitLab, Linux
