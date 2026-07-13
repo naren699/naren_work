@@ -1,9 +1,9 @@
-import { Bot, Braces, GraduationCap, Layers3, Sparkles, TerminalSquare, Wallet, Zap } from 'lucide-react'
+import { Bot, Braces, Layers3, Sparkles, TerminalSquare, Wallet, Zap } from 'lucide-react'
 import { GithubIcon, LeetcodeIcon, LinkedinIcon } from '../components/icons'
 
 export const navItems = [
   { id: 'home', label: 'Home', path: '/' },
-  { id: 'about', label: 'About', path: '/', hash: 'about' },
+  { id: 'about', label: 'About', path: '/about' },
   { id: 'skills', label: 'Skills', path: '/skills' },
   { id: 'projects', label: 'Projects', path: '/projects' },
   { id: 'journey', label: 'Journey', path: '/journey' },

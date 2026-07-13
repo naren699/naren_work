@@ -1,13 +1,17 @@
 import HomeHero from '../sections/HomeHero'
-import AboutSection from '../sections/AboutSection'
-import { AchievementTicker } from '../components/shared/AchievementTicker'
+import PhilosophySection from '../sections/PhilosophySection'
+import SelectedWorkSection from '../sections/SelectedWorkSection'
+import StackSection from '../sections/StackSection'
+import CtaSection from '../sections/CtaSection'
 
 export default function HomePage() {
   return (
     <>
-      <AchievementTicker />
       <HomeHero />
-      <AboutSection />
+      <PhilosophySection />
+      <SelectedWorkSection />
+      <StackSection />
+      <CtaSection />
     </>
   )
 }

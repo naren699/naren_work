@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
 /* ── Theme tokens ───────────────────────────────────────────────
    Dark values are identical to the original hardcoded colors, so
@@ -138,6 +139,213 @@ html.custom-cursor-active * {
   15% { opacity: var(--particle-opacity, 0.4); }
   50% { transform: translate3d(var(--px, 10px), var(--py, -30px), 0); opacity: var(--particle-opacity, 0.4); }
   85% { opacity: 0; }
+}
+
+/* Premium link treatment: underline draws in from the left on hover. */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-underline:hover,
+.group:hover .link-underline {
+  background-size: 100% 1px;
+}
+
+/* ── Hero name + face card (luxury) ────────────────────────────
+   One committed accent — violet #8B5CF6 — shared by the name
+   underline, the face-card border, and its glow, so the two hero
+   halves visually talk to each other. */
+.hero-name {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] .hero-name {
+  text-shadow: 0 2px 8px rgba(20, 16, 31, 0.1);
+}
+
+.hero-underline {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 8px;
+  background: #8b5cf6;
+  opacity: 0.6;
+  transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#home:hover .hero-underline {
+  transform: translateX(30px);
+  opacity: 1;
+}
+
+.face-card {
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 1px rgba(255, 255, 255, 0.2),
+    0 12px 32px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(139, 92, 246, 0.2);
+  transition:
+    transform 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.face-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow:
+    inset 0 0 1px rgba(255, 255, 255, 0.2),
+    0 20px 48px rgba(0, 0, 0, 0.35),
+    0 0 60px rgba(139, 92, 246, 0.4);
+}
+
+[data-theme="light"] .face-card {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 12px 32px rgba(20, 16, 31, 0.12),
+    0 0 40px rgba(139, 92, 246, 0.15);
+}
+
+[data-theme="light"] .face-card:hover {
+  box-shadow:
+    0 20px 48px rgba(20, 16, 31, 0.18),
+    0 0 60px rgba(139, 92, 246, 0.3);
+}
+
+/* Breathing glow — starts after the entry animation settles. */
+@media (prefers-reduced-motion: no-preference) {
+  .face-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+    opacity: 0;
+    animation: face-breathe 3s ease-in-out 1.8s infinite;
+  }
+
+  @keyframes face-breathe {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+}
+
+/* Gallery mat between frame and photo, plus directional lighting. */
+.face-card-photo-wrap {
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.face-card:hover .face-card-photo-wrap {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.face-card-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.12) 100%);
+  opacity: 0.3;
+}
+
+.face-card-photo {
+  filter: brightness(1.05) contrast(1.08) saturate(1.1);
+  transition: filter 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.face-card:hover .face-card-photo {
+  filter: brightness(1.1) contrast(1.08) saturate(1.1);
+}
+
+.face-card-corner {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  width: 4px;
+  height: 4px;
+  background: #8b5cf6;
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.8);
+  opacity: 0.4;
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.face-card:hover .face-card-corner {
+  opacity: 0.8;
+}
+
+/* ── Journey timeline (luxury) ─────────────────────────────────
+   Each year section sets --yr to its accent as an "R, G, B" triplet,
+   so every glow/border/badge composes from one source of truth. */
+.jt-card {
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jt-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(var(--yr), 0.35);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.25), 0 8px 24px rgba(var(--yr), 0.2);
+}
+
+[data-theme="light"] .jt-card {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(17, 12, 33, 0.1);
+  box-shadow: 0 4px 12px rgba(17, 12, 33, 0.06);
+}
+
+[data-theme="light"] .jt-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(var(--yr), 0.4);
+  box-shadow: 0 8px 24px rgba(var(--yr), 0.15);
+}
+
+.jt-node {
+  background: rgb(var(--yr));
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 0 20px rgba(var(--yr), 0.35);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jt-milestone:hover .jt-node {
+  transform: scale(1.15);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 0 28px rgba(var(--yr), 0.55);
+}
+
+.jt-card:focus-visible,
+.jt-expand:focus-visible {
+  outline: 2px solid rgba(var(--yr), 0.6);
+  outline-offset: 4px;
+}
+
+.jt-badge {
+  background: rgba(var(--yr), 0.12);
+  border: 1px solid rgba(var(--yr), 0.3);
+  color: rgb(var(--yr));
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jt-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(var(--yr), 0.4);
 }
 
 .text-gradient {
