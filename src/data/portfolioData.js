@@ -47,11 +47,11 @@ export const projects = [
     },
   },
   {
-    number: '02', title: 'ExpenseFlow – Smart Expense Tracker', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
+    number: '02', title: 'CAPITAL – Smart Finance Management', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
     role: 'Designed & Developed', status: 'Completed',
     pitch: 'A modern personal finance platform that helps users track expenses, manage budgets, visualize spending trends, and achieve financial goals through an intuitive dashboard.',
-    overview: 'ExpenseFlow is a full-stack personal finance application built to simplify money management through a clean, responsive interface. Users can securely manage income and expenses, organize transactions by category, monitor budgets, and gain insights through interactive analytics. The application focuses on usability, real-time data updates, and scalable architecture.',
-    problem: 'Managing personal finances should be simple and accessible. ExpenseFlow transforms raw financial data into meaningful insights, enabling users to understand spending habits, stay within budgets, and make informed financial decisions through clear visualizations and a streamlined user experience.',
+    overview: 'CAPITAL is a full-stack personal finance application built to simplify money management through a clean, responsive interface. Users can securely manage income and expenses, organize transactions by category, monitor budgets, and gain insights through interactive analytics. The application focuses on usability, real-time data updates, and scalable architecture.',
+    problem: 'Managing personal finances should be simple and accessible. CAPITAL transforms raw financial data into meaningful insights, enabling users to understand spending habits, stay within budgets, and make informed financial decisions through clear visualizations and a streamlined user experience.',
     features: [
       'Secure user authentication using Firebase Authentication',
       'Real-time expense and income management with Firestore',
@@ -82,8 +82,8 @@ export const projects = [
     ],
     buildNotes: 'Built to turn everyday financial data into clear, actionable insight through a fast, secure, and fully responsive experience.',
     links: {
-      github: 'https://github.com/naren699/exxpense-tracker',
-      live: 'https://expenseone-eight.vercel.app/',
+      github: 'https://github.com/naren699/capital',
+      live: 'https://capital-roan.vercel.app/',
     },
   },
   {
