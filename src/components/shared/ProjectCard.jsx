@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Check, ExternalLink } from 'lucide-react'
+import { Check, ExternalLink, Play } from 'lucide-react'
 import { GithubIcon } from '../icons'
 import { Stagger } from '../Motion'
 import { cardHover, chipVariants, easing } from '../motionVariants'
@@ -12,6 +12,7 @@ export function ProjectCard({ project, index }) {
   const theme = getProjectTheme(project.accent)
   const hasGithub = Boolean(project.links?.github)
   const hasLiveDemo = Boolean(project.links?.live)
+  const hasYoutube = Boolean(project.links?.youtube)
 
   return (
     <motion.article
@@ -66,9 +67,15 @@ export function ProjectCard({ project, index }) {
             <ActionLink href={project.links?.github || '#'} onClick={hasGithub ? undefined : (event) => event.preventDefault()} external={hasGithub} className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-xs font-semibold text-[var(--text)] transition-colors hover:border-[rgba(var(--accent-rgb),0.4)] hover:bg-[rgba(var(--accent-rgb),0.06)] hover:text-[var(--accent)]">
               <GithubIcon size={15} /> GitHub {!hasGithub && <span className="text-[var(--text-faint)]">soon</span>}
             </ActionLink>
-            <ActionLink href={project.links?.live || '#'} onClick={hasLiveDemo ? undefined : (event) => event.preventDefault()} external={hasLiveDemo} className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-2.5 text-xs font-semibold text-neutral-950 transition-[filter] duration-300 hover:brightness-110">
-              Live demo <motion.span whileHover={{ rotate: 12, x: 2 }}><ExternalLink size={14} /></motion.span>{!hasLiveDemo && <span className="opacity-55">soon</span>}
-            </ActionLink>
+            {hasYoutube ? (
+              <ActionLink href={project.links.youtube} external className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-2.5 text-xs font-semibold text-neutral-950 transition-[filter] duration-300 hover:brightness-110">
+                Watch demo <motion.span whileHover={{ rotate: 12, x: 2 }}><Play size={13} className="fill-current" /></motion.span>
+              </ActionLink>
+            ) : (
+              <ActionLink href={project.links?.live || '#'} onClick={hasLiveDemo ? undefined : (event) => event.preventDefault()} external={hasLiveDemo} className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-2.5 text-xs font-semibold text-neutral-950 transition-[filter] duration-300 hover:brightness-110">
+                Live demo <motion.span whileHover={{ rotate: 12, x: 2 }}><ExternalLink size={14} /></motion.span>{!hasLiveDemo && <span className="opacity-55">soon</span>}
+              </ActionLink>
+            )}
           </div>
         </div>
         <div className={index % 2 ? 'lg:order-1' : ''}><ProjectPreview project={project} /></div>

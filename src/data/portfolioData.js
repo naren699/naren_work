@@ -1,4 +1,4 @@
-import { Bot, Braces, Layers3, Sparkles, TerminalSquare, Wallet, Zap } from 'lucide-react'
+import { Bot, Braces, Hand, Layers3, Sparkles, TerminalSquare, Wallet, Zap } from 'lucide-react'
 import { GithubIcon, LeetcodeIcon, LinkedinIcon } from '../components/icons'
 
 export const navItems = [
@@ -21,7 +21,39 @@ export const skillGroups = [
 
 export const projects = [
   {
-    number: '01', title: 'Weather Prediction Application', eyebrow: 'Internship project · Straive', type: 'Frontend / Internship Project', date: 'Jun — Jul 2025', icon: Zap, accent: 'blue', previewStyle: 'weather-dashboard',
+    number: '01', title: 'HandDrive – Gesture-Controlled Game System', eyebrow: 'Real-time computer vision', type: 'Computer Vision / Python', date: '2026', icon: Hand, accent: 'orange', previewStyle: 'gesture-control',
+    role: 'Designed & Developed', status: 'Completed',
+    pitch: 'Show your hand to the camera and play Hill Climb Racing — or any keyboard-driven game — using only hand gestures.',
+    overview: 'A real-time computer vision system that detects hand gestures via webcam and converts them into keyboard commands to control games. Open hand controls gas, closed fist controls brake — all at roughly 30ms end-to-end latency.',
+    problem: 'Game input does not have to mean a keyboard. HandDrive turns a plain webcam into a natural controller using rule-based gesture classification that compares hand-landmark relationships instead of raw pixel positions — so it works with no ML training at all.',
+    features: [
+      'Real-time hand landmark detection (21 points per hand)',
+      'Rule-based gesture classification (no ML training needed)',
+      'Smooth keyboard event injection with state tracking',
+      'Safety mechanisms (pause mode, auto-release)',
+      'Open hand = gas, closed fist = brake',
+      '~30ms end-to-end latency',
+    ],
+    stack: [
+      { label: 'Python 3.11', icon: '🐍' },
+      { label: 'MediaPipe', icon: '✋' },
+      { label: 'OpenCV', icon: '📷' },
+      { label: 'pynput', icon: '⌨' },
+    ],
+    stats: [
+      { label: 'Latency', value: '~30ms' },
+      { label: 'Landmarks', value: '21 / hand' },
+      { label: 'Training', value: 'None' },
+      { label: 'Input', value: 'Webcam' },
+    ],
+    buildNotes: 'Built to prove a plain webcam and clean gesture rules can replace a controller — responsive enough for live racing games.',
+    links: {
+      github: 'https://github.com/naren699/gesture-game-controller',
+      youtube: 'https://youtu.be/89zmWev1bpg',
+    },
+  },
+  {
+    number: '02', title: 'Weather Prediction Application', eyebrow: 'Internship project · Straive', type: 'Frontend / Internship Project', date: 'Jun — Jul 2025', icon: Zap, accent: 'blue', previewStyle: 'weather-dashboard',
     role: 'Designed & Developed', status: 'Completed',
     pitch: 'A responsive weather experience that makes live location data easy to understand at a glance.',
     overview: 'Built during my Full Stack Development internship at Straive, this React application translates live weather API responses into a clean, responsive interface for selected locations.',
@@ -47,7 +79,7 @@ export const projects = [
     },
   },
   {
-    number: '02', title: 'CAPITAL – Smart Finance Management', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
+    number: '03', title: 'CAPITAL – Smart Finance Management', eyebrow: 'Full-stack personal finance platform', type: 'Full Stack Web Application', date: '2025 — Present', icon: Wallet, accent: 'emerald', previewStyle: 'finance-dashboard',
     role: 'Designed & Developed', status: 'Completed',
     pitch: 'A modern personal finance platform that helps users track expenses, manage budgets, visualize spending trends, and achieve financial goals through an intuitive dashboard.',
     overview: 'CAPITAL is a full-stack personal finance application built to simplify money management through a clean, responsive interface. Users can securely manage income and expenses, organize transactions by category, monitor budgets, and gain insights through interactive analytics. The application focuses on usability, real-time data updates, and scalable architecture.',
@@ -87,7 +119,7 @@ export const projects = [
     },
   },
   {
-    number: '03', title: 'AI Notes Summarizer', eyebrow: 'AI-powered productivity application', type: 'AI Productivity Tool', date: 'June 2026', icon: Sparkles, accent: 'purple', previewStyle: 'ai-dashboard',
+    number: '04', title: 'AI Notes Summarizer', eyebrow: 'AI-powered productivity application', type: 'AI Productivity Tool', date: 'June 2026', icon: Sparkles, accent: 'purple', previewStyle: 'ai-dashboard',
     role: 'Designed & Developed', status: 'Completed',
     pitch: 'Turns long study material into clear, structured notes—so understanding takes less time.',
     overview: 'A learning-focused web application for simplifying dense text into concise, useful notes. The product pairs an approachable React experience with AI summarization and a cloud-backed workflow.',

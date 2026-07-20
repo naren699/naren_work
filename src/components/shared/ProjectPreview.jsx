@@ -4,6 +4,7 @@ import { easing } from '../motionVariants'
 export function ProjectPreview({ project }) {
   const isWeather = project.previewStyle === 'weather-dashboard'
   const isFinance = project.previewStyle === 'finance-dashboard'
+  const isGesture = project.previewStyle === 'gesture-control'
   const Icon = project.icon
 
   return (
@@ -44,6 +45,35 @@ export function ProjectPreview({ project }) {
               {[22, 38, 30, 55, 42, 68, 60, 72, 49].map((height, index) => (
                 <motion.span key={index} initial={{ height: 0 }} whileInView={{ height: `${height}%` }} viewport={{ once: true }} transition={{ duration: 0.52, delay: index * 0.035, ease: easing }} className="w-full rounded-t bg-[var(--accent)]" style={{ opacity: index % 2 === 0 ? 0.7 : 0.35 }} />
               ))}
+            </div>
+          </div>
+        ) : isGesture ? (
+          <div className="pt-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[rgba(var(--accent-rgb),0.85)]">Gesture detected</p>
+                <p className="mt-1 text-2xl font-semibold tracking-tight text-[var(--text)]">Open hand</p>
+              </div>
+              <motion.div whileHover={{ rotate: 6, scale: 1.06 }} className="grid h-12 w-12 place-items-center rounded-2xl border border-[rgba(var(--accent-rgb),0.2)] bg-[rgba(var(--accent-rgb),0.07)]">
+                <Icon size={21} className="text-[var(--accent)]" />
+              </motion.div>
+            </div>
+            <div className="relative mt-5 h-24 overflow-hidden rounded-xl border border-[var(--border-faint)] bg-[var(--fill-faint)]">
+              {[[30, 62], [40, 40], [46, 22], [52, 30], [58, 22], [64, 24], [70, 30], [60, 55], [66, 52], [72, 56]].map(([x, y], index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0.3 }}
+                  animate={{ opacity: [0.3, 1, 0.3] }}
+                  transition={{ duration: 2, delay: index * 0.12, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
+                  style={{ left: `${x}%`, top: `${y}%` }}
+                />
+              ))}
+              <span className="absolute right-2 top-2 rounded-full bg-[rgba(var(--accent-rgb),0.1)] px-2 py-1 text-[9px] font-medium text-[var(--accent)]">21 landmarks</span>
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <div className="rounded-xl border border-[rgba(var(--accent-rgb),0.2)] bg-[rgba(var(--accent-rgb),0.07)] p-3"><p className="text-[9px] uppercase tracking-[0.12em] text-[var(--text-muted)]">Gas</p><p className="mt-1.5 text-xs text-[var(--text)]">Open hand ✋</p></div>
+              <div className="rounded-xl border border-[var(--border-faint)] bg-[var(--fill-faint)] p-3"><p className="text-[9px] uppercase tracking-[0.12em] text-[var(--text-muted)]">Latency</p><p className="mt-1.5 text-xs text-[var(--text)]">~30ms</p></div>
             </div>
           </div>
         ) : isFinance ? (
